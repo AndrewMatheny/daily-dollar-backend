@@ -2,7 +2,7 @@ User.destroy_all
 Budget.destroy_all
 Transaction.destroy_all
 
-#DateTime Year,Month,Day,Hour,Minute,Second
+#DateTime Year,Month,Day,Hour,Minute, - Second
 
 date1 = DateTime.new(2020, 02, 01, 12, 15)
 date2 = DateTime.new(2020, 02, 02, 12, 15)
