@@ -15,7 +15,7 @@ date31 = DateTime.new(2020, 02, 04, 02, 30)
 date32 = DateTime.new(2020, 02, 05, 03, 11)
 
 
-drew = User.create(name: "Drew", income: 100000)
+drew = User.create(indiv: "test1234", name: "Drew", email: "test@test.co", income: 100000)
 
 budget1 = Budget.create(name: "Lunch", limit: 2000, daily: true, user_id: drew.id)
 budget2 = Budget.create(name: "Rent", limit: 10000, daily: false, user_id: drew.id)
@@ -28,7 +28,7 @@ Transaction.create(name: "Chipotle", amount: 11.22, date: date4, budget_id: budg
 Transaction.create(name: "Steak and Shake", amount: 10.02, date: date5, budget_id: budget1.id, user_id: drew.id)
 Transaction.create(name: "Qdoba", amount: 15.57, date: date6, budget_id: budget1.id, user_id: drew.id)
 
-Transaction.create(name: "Amazon", amount: 55.42, date: date31, budget_id: budget1.id, user_id: drew.id)
-Transaction.create(name: "Best Buy", amount: 336.32, date: date32, budget_id: budget1.id, user_id: drew.id)
+Transaction.create(name: "Amazon", amount: 55.42, date: date31, budget_id: budget3.id, user_id: drew.id)
+Transaction.create(name: "Best Buy", amount: 336.32, date: date32, budget_id: budget3.id, user_id: drew.id)
 
 

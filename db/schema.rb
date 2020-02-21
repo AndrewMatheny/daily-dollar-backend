@@ -38,7 +38,9 @@ ActiveRecord::Schema.define(version: 2020_02_20_193729) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "indiv"
     t.string "name"
+    t.string "email"
     t.decimal "income", precision: 15, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
