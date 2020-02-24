@@ -16,6 +16,11 @@ class BudgetsController < ApplicationController
         render :json => @budgets
     end
 
+    def getDailyBudgets
+        @budgets = Budget.where(user_id: params[:id], daily: true)
+        render :json => @budgets
+    end
+
     def create 
         @user = User.find(params[:user_id])
         @budget = Budget.new(budget_params)
