@@ -16,10 +16,12 @@ date32 = DateTime.new(2020, 02, 05, 03, 11)
 
 
 drew = User.create(indiv: "test1234", name: "Drew", email: "test@test.co", income: 100000)
+zach = User.create(indiv: "testZ", name: "Zach", email: "test@testz.zo", income: 100)
 
 budget1 = Budget.create(name: "Lunch", limit: 2000, daily: true, user_id: drew.id)
 budget2 = Budget.create(name: "Rent", limit: 10000, daily: false, user_id: drew.id)
 budget3 = Budget.create(name: "Shopping", limit: 5000, daily: true, user_id: drew.id)
+budget4 = Budget.create(name: "Video Games", limit: 100, daily: true, user_id: zach.id)
 
 Transaction.create(name: "Chipotle", amount: 12.37, date: date1, budget_id: budget1.id, user_id: drew.id)
 Transaction.create(name: "Qdoba", amount: 14.50, date: date2, budget_id: budget1.id, user_id: drew.id)

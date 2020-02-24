@@ -1,3 +1,4 @@
+require 'byebug'
 class BudgetsController < ApplicationController
     def index
         @budgets = Budget.all 
@@ -7,6 +8,12 @@ class BudgetsController < ApplicationController
     def show
         @budget = Budget.find(params[:id])
         render :json => @budget
+    end
+
+    def getUserBudgets
+        @budgets = Budget.where(user_id: params[:id])
+        # byebug
+        render :json => @budgets
     end
 
     def create 
