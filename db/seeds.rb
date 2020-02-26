@@ -4,15 +4,30 @@ Transaction.destroy_all
 
 #DateTime Year,Month,Day,Hour,Minute, - Second
 
-date1 = DateTime.new(2020, 02, 01, 12, 15)
-date2 = DateTime.new(2020, 02, 02, 12, 15)
-date3 = DateTime.new(2020, 02, 03, 12, 15)
-date4 = DateTime.new(2020, 02, 04, 12, 15)
-date5 = DateTime.new(2020, 02, 05, 12, 15)
-date6 = DateTime.new(2020, 02, 06, 12, 15)
+Time.zone = "Pacific Time (US & Canada)"
 
-date31 = DateTime.new(2020, 02, 04, 02, 30)
-date32 = DateTime.new(2020, 02, 05, 03, 11)
+date1 = DateTime.new(2020, 02, 01, 12, 15).in_time_zone("Pacific Time (US & Canada)")
+date2 = DateTime.new(2020, 02, 02, 12, 15).in_time_zone("Pacific Time (US & Canada)")
+date3 = DateTime.new(2020, 02, 03, 12, 15).in_time_zone("Pacific Time (US & Canada)")
+date4 = DateTime.new(2020, 02, 04, 12, 15).in_time_zone("Pacific Time (US & Canada)")
+date45 = DateTime.new(2020, 02, 04, 12, 30).in_time_zone("Pacific Time (US & Canada)")
+date5 = DateTime.new(2020, 02, 05, 12, 15).in_time_zone("Pacific Time (US & Canada)")
+date6 = DateTime.new(2020, 02, 06, 12, 15).in_time_zone("Pacific Time (US & Canada)")
+
+date31 = DateTime.new(2020, 02, 04, 02, 30).in_time_zone("Pacific Time (US & Canada)")
+date32 = DateTime.new(2020, 02, 05, 03, 11).in_time_zone("Pacific Time (US & Canada)")
+
+# date1 = DateTime.new(2020, 02, 01, 12, 15)
+# date2 = DateTime.new(2020, 02, 02, 12, 15)
+# date3 = DateTime.new(2020, 02, 03, 12, 15)
+# date4 = DateTime.new(2020, 02, 04, 12, 15)
+# date45 = DateTime.new(2020, 02, 04, 12, 30)
+# date5 = DateTime.new(2020, 02, 05, 12, 15)
+# date6 = DateTime.new(2020, 02, 06, 12, 15)
+
+# date31 = DateTime.new(2020, 02, 04, 02, 30)
+# date32 = DateTime.new(2020, 02, 05, 03, 11)
+
 
 
 drew = User.create(indiv: "test1234", name: "Drew", email: "test@test.co", income: 100000)
@@ -27,6 +42,8 @@ Transaction.create(name: "Chipotle", amount: 12.37, date: date1, budget_id: budg
 Transaction.create(name: "Qdoba", amount: 14.50, date: date2, budget_id: budget1.id, user_id: drew.id)
 Transaction.create(name: "Qdoba", amount: 14.50, date: date3, budget_id: budget1.id, user_id: drew.id)
 Transaction.create(name: "Chipotle", amount: 11.22, date: date4, budget_id: budget1.id, user_id: drew.id)
+Transaction.create(name: "Chipotle", amount: 13.22, date: date45, budget_id: budget1.id, user_id: drew.id)
+Transaction.create(name: "Chipotle", amount: 14.22, date: date4, budget_id: budget1.id, user_id: drew.id)
 Transaction.create(name: "Steak and Shake", amount: 10.02, date: date5, budget_id: budget1.id, user_id: drew.id)
 Transaction.create(name: "Qdoba", amount: 15.57, date: date6, budget_id: budget1.id, user_id: drew.id)
 
