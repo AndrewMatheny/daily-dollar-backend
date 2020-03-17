@@ -1,4 +1,4 @@
-require 'byebug'
+# require 'byebug'
 class BudgetsController < ApplicationController
     def index
         @budgets = Budget.all 
