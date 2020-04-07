@@ -1,4 +1,3 @@
-# require 'byebug'
 class BudgetsController < ApplicationController
     def index
         @budgets = Budget.all 
@@ -12,7 +11,6 @@ class BudgetsController < ApplicationController
 
     def getUserBudgets
         @budgets = Budget.where(user_id: params[:id])
-        # byebug
         render :json => @budgets
     end
 
@@ -20,10 +18,6 @@ class BudgetsController < ApplicationController
         @budgets = Budget.where(user_id: params[:id], daily: true)
         render :json => @budgets
     end
-
-    # def getBudgetsDailyTransactions
-
-    # end
 
     def create 
         @user = User.find(params[:user_id])
